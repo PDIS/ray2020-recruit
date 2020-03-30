@@ -1,0 +1,75 @@
+.btn {
+    margin: 5px;
+    font-weight: 300;
+}
+
+.heart {
+    font-size: 1em !important;
+}
+
+#contact p {
+    color: #333;
+}
+
+.edit {
+    margin-top: 25px;
+    /* display: block; */
+    display: none;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.header-bg {
+    background-color: rgba(51, 51, 51, 1);
+    background-blend-mode: overlay;
+}
+
+.text-light {
+    color: #fff
+}
+
+#faq p a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+#faq p,
+#services p {
+    color: white;
+    font-weight: 500;
+}
+
+#faq h3,
+#services h3 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-family: Noto Sans CJK TC, Source Han Sans TW, Noto Sans T Chinese, Source Han Sans TWHK, Microsoft Jhenghei, "微軟正黑體", Source Han Sans, Source Han Sans HK, Lantinghei TC, Heiti TC, "黑體-繁", Lihei Pro, "儷黑 Pro", "Adobe 繁黑體 Std", sans-serif;
+    font-weight: 300;
+}
+
+#slogan {
+    font-weight: 300;
+}
+
+.fa-4x {
+    font-size: 4em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+audio {
+    width: 100px;
+    display: inline;
+    margin: 20px;
+}
+
+.primary-color{
+    color: #F05F40
+}

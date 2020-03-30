@@ -1,0 +1,34 @@
+<section class="bg-" id="schedule">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">專案期程</h2>
+                <hr class="primary">
+                <section class="timeline">
+                    {% for event in site.data.timeline %}
+                    <div class="timeline-block">
+                        <div class="timeline-bullet wow zoomIn {% if event.done %}timeline-done{% endif %}" data-wow-delay="0s">
+                        </div>
+                        <div class="timeline-content">
+
+                            <h2 class="wow flipInX" data-wow-delay="0.3s">
+                                {{event.title}} {% if event.video!=null %}
+                                <a href="{{event.video}}" target="_blank">
+                                    <!-- <i style="position: absolute;" class="fa fa-video-camera" aria-hidden="true"></i> -->
+                                        <img src="{{event.videoimg}}" />
+                                </a>
+                                {% endif %}
+                            </h2>
+                            <p class="wow flipInX" data-wow-delay="0.3s">{{event.owner}}</p>
+                            <span class="date wow flipInX" data-wow-delay="0.3s">{{event.date}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </section>
+                <a class="edit" href="{{site.github.repository_url}}/edit/master/docs/_data/timeline.json">
+                    <i class="fa fa-edit wow bounceIn text-default" data-wow-delay=".3s"></i>edit timeline
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

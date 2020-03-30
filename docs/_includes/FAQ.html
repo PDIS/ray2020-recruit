@@ -1,0 +1,22 @@
+<section class="bg-primary" id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">FAQ</h2>
+                <hr class="light">
+                <hr>
+            </div>
+
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+
+                {% for qa in site.data.faq%}
+                <h3 class="section-heading">{{qa.q}}</h3>
+                {{qa.a|markdownify}}
+                <hr> {% endfor %}
+                <a class="edit" href="{{site.github.repository_url}}/edit/master/docs/_data/faq.json">
+                    <i class="fa fa-edit wow bounceIn text-default" data-wow-delay=".3s"></i>edit FAQ
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

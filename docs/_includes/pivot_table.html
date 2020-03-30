@@ -1,0 +1,205 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<section class="bg-primary" id="statistics">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">專案完成比例</h2>
+                <hr class="light">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <span id="count" class="bigNumber wow  bounceIn"><i class="fa fa-spinner fa-spin fa-fw"></i></span>
+                        <h3 class=" text-faded">個網站需要檢查</h3>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <span id="checked" class="bigNumber wow  bounceIn"><i class="fa fa-spinner fa-spin fa-fw"></i></span>
+                        <h3 class=" text-faded">已經檢查完成</h3>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <span id="done" class="bigNumber wow  bounceIn "><i class="fa fa-spinner fa-spin fa-fw"></i></span>
+                        <h3 class=" text-faded">已經寫出建議</h3>
+                    </div>
+                    <a style="color:white" href="https://docs.google.com/spreadsheets/d/1k7tyMUC3KHiRBpH1d6lChCykNUDYBB-VIiYZnUSbTSM/edit#gid=1028555040">詳細檢查網站清單</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<section class="bg-" id="plots-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">各機關完成比例</h2>
+                <hr class="primary">
+                <br>
+                <div id="plots">
+                </div>
+                <style>
+                    .bigNumber {
+                        font-size: 10rem;
+                        font-weight: 700;
+                    }
+
+                    .square {
+                        width: 16px;
+                        padding-bottom: 16px;
+                        background-color: #F05F40;
+                        height: 0px;
+                        float: left;
+                        margin: 2px
+                    }
+
+                    .square2 {
+                        width: 16px;
+                        padding-bottom: 16px;
+                        background-color: rgb(255, 187, 0);
+                        height: 0px;
+                        float: left;
+                        margin: 2px
+                    }
+
+                    .square3 {
+                        width: 16px;
+                        padding-bottom: 16px;
+                        background-color: #EEE;
+                        height: 0px;
+                        float: left;
+                        margin: 2px
+                    }
+
+                    .plot {
+                        margin: 10px 0;
+                        min-height: 200px;
+                        color: black;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+    var name2id = {
+        "行政院": 322,
+        "國家發展委員會": 323,
+        "教育部": 324,
+        "大陸委員會": 325,
+        "公平交易委員會": 326,
+        "公共工程委員會": 327,
+        "主計總處": 328,
+        "海岸巡防署": 329,
+        "國立故宮博物院": 330,
+        "國家通訊傳播委員會": 331,
+        "僑務委員會": 332,
+        "環境保護署": 333,
+        "客家委員會": 334,
+        "原住民族委員會": 335,
+        "人事行政總處": 336,
+        "中央銀行": 337,
+        "外交部": 338,
+        "原子能委員會": 339,
+        "科技部": 340,
+        "金融監督管理委員會": 341,
+        "國防部": 342,
+        "衛生福利部": 343,
+        "勞動部": 344,
+        "文化部": 345,
+        "中央選舉委員會": 346,
+        "內政部": 347,
+        "財政部": 348,
+        "農業委員會": 349,
+        "國軍退除役官兵輔導委員會": 350,
+        "經濟部": 351,
+        "交通部": 352,
+        "法務部": 353
+    };
+
+    var aaa;
+
+    function genChartHTML(data) {
+
+        checked = 0;
+
+        total = 508;
+
+        done = 0;
+
+        data = csvJSON("部會" + data);
+
+        data.forEach(plot => {
+
+            if(plot['部會']==="總和")
+                return
+
+            $("#plots").append('<a target="_blank" href="https://talk.pdis.nat.gov.tw/c/ray/' + name2id[plot['部會']] + '"><div class="col-sm-6 col-md-4 plot" title="完成率 ' + plot['解答完成比例'] + '%" id="' + plot['部會'] + '"></div>')
+
+            $("#" + plot['部會']).append("<h4>" + plot['部會'] + "</h4>")
+
+            for (i = 0; i < plot['測試完成的COUNTA']; i++) {
+                $("#" + plot['部會']).append("<span class='square'></span>")
+            }
+            for (i = 0; i < plot['報告網址的COUNTUNIQUE'] - plot['測試完成的COUNTA']; i++) {
+                $("#" + plot['部會']).append("<span class='square2'></span>")
+            }
+            for (i = 0; i < plot['網址的COUNTUNIQUE'] - plot['報告網址的COUNTUNIQUE']; i++) {
+                $("#" + plot['部會']).append("<span class='square3'></span>")
+            }
+            $("#" + plot['部會']).append("<div class='clearfix'></div></a>")
+
+            checked=checked+parseInt(plot['報告網址的COUNTUNIQUE']);
+
+            done=done+parseInt(plot['測試完成的COUNTA']);
+
+        })
+        
+        $("#count").text(total)
+
+        $("#done").text(Math.trunc((done/508)*100)+"%")
+
+        $("#checked").text(Math.trunc((checked/508)*100)+"%")
+
+    }
+
+    function csvJSON(csv) {
+
+        var lines = csv.split("\r\n");
+
+        var result = [];
+
+        var headers = lines[0].split(",");
+
+        console.log(headers)
+
+        for (var i = 1; i < lines.length; i++) {
+
+            var obj = {};
+            var currentline = lines[i].split(",");
+
+            for (var j = 0; j < headers.length; j++) {
+                obj[headers[j]] = currentline[j];
+            }
+
+            result.push(obj);
+
+        }
+
+        return result;
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR7eHB4amI22UxK_QpqNjlWb0VkgHpMSY717u-EQzdRZTzCuid_rS8Zpsdys9w9P71lYnBAIJl9LOc9/pub?gid=35926127&single=true&output=csv",
+            dataType: "text",
+            success: genChartHTML
+        });
+    });
+
+</script>
