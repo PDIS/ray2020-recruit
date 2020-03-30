@@ -2,43 +2,43 @@
     {
         "title": "開放報名",
         "owner": "青年署 - 「大專學生公部門見習計畫」",
-        "date": "2019-04-08",
-        "done": true
+        "date": "2020-04-13",
+        "done": false
     },
     {
-        "title": "報名截止，選出 36 人進入面試",
+        "title": "報名截止",
         "owner": "青年署 - 「大專學生公部門見習計畫」",
-        "date": "2019-04-26",
-        "done": true
+        "date": "2020-05-05",
+        "done": false
     },
     {
         "title": "寄送面試通知",
         "owner": "PDIS 公共數位創新空間小組",
-        "date": "2019-05-06",
-        "done": true
+        "date": "2020-05-11",
+        "done": false
     },
     {
         "title": "來面試聊聊天",
         "owner": "PDIS 公共數位創新空間小組",
-        "date": "2019-05-15~16",
-        "done": true
+        "date": "2020-05-18~28",
+        "done": false
     },
     {
-        "title": "25 人錄取名單公佈",
+        "title": "30 人錄取名單公佈",
         "owner": "青年署 - 「大專學生公部門見習計畫」",
-        "date": "2019-06-20",
+        "date": "2020-06-05",
         "done": false
     },
     {
         "title": "報到／講習工作坊",
         "owner": "PDIS 公共數位創新空間小組",
-        "date": "2019-07-01",
+        "date": "2020-07-01",
         "done": false
     },
     {
         "title": "PDIS 內部成果發表會",
         "owner": "PDIS 公共數位創新空間小組",
-        "date": "2019-08-30",
+        "date": "2020-08-30",
         "done": false
     }
 ]

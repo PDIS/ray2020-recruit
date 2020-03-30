@@ -4,36 +4,41 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">錄取名單
                 </h2>
-                <hr class="primary">
+                <h3 style="font-weight: 600;color: #717171; margin-top:30px">敬請期待
+                </h3>
+                <!-- <hr class="primary">
                 {% for list in site.data.admission-list %}
-                    <div class="col-md-12">
-                        <h3 style="font-weight: 600;color: #717171; margin-bottom:30px">
-                            {{list.title}}
-                        </h3>
-                        {% for name in list.names %}
-                        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-                        <div class="col-md-6">
+                <div class="col-md-12">
+                    <h3 style="font-weight: 600;color: #717171; margin-bottom:30px">
+                        {{list.title}}
+                    </h3>
+                    {% for name in list.names %}
+                    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+                    <div class="col-md-6">
                         {% if thecycle == 'odd' %}
-                            <h4 class="wow  flipInX" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInX;    margin-top: 20px;">
-                                <i class="fa fa-user wow flipInX primary-color"></i>  {{name}}
-                            </h4>
+                        <h4 class="wow  flipInX" data-wow-delay="0.3s"
+                            style="visibility: visible; animation-delay: 0.3s; animation-name: flipInX;    margin-top: 20px;">
+                            <i class="fa fa-user wow flipInX primary-color"></i> {{name}}
+                        </h4>
                         {% endif %}
-                        </div>
-                        <div class="col-md-6">
-                        {% if thecycle == 'even' %}
-                            <h4 class="wow  flipInX" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInX;    margin-top: 20px;">
-                                <i class="fa fa-user wow flipInX primary-color"></i>  {{name}}
-                            </h4>
-                        {% endif %}
-                        </div>
-                        {% endfor %}
                     </div>
+                    <div class="col-md-6">
+                        {% if thecycle == 'even' %}
+                        <h4 class="wow  flipInX" data-wow-delay="0.3s"
+                            style="visibility: visible; animation-delay: 0.3s; animation-name: flipInX;    margin-top: 20px;">
+                            <i class="fa fa-user wow flipInX primary-color"></i> {{name}}
+                        </h4>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
                 {% endfor %}
                 <h3 style="font-weight: 600;color: #717171; margin-top:30px">錄取同學請隨時留意email重要訊息通知
-                </h3>
+                </h3> -->
             </div>
         </div>
-        <a class="edit text-center text-faded" href="{{site.github.repository_url}}/edit/master/docs/_data/admission-list.json">
+        <a class="edit text-center text-faded"
+            href="{{site.github.repository_url}}/edit/master/docs/_data/admission-list.json">
             <i class="fa fa-edit wow bounceIn text-default" data-wow-delay=".3s"></i>edit content
         </a>
     </div>
