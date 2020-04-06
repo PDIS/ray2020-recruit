@@ -4,13 +4,12 @@
         {
             "title": "來自哪裡？",
             "icon": "fa-rocket",
-            "content": "RAY計畫是透過教育部「大專學生公部門見習計畫」招募青年學生，名額 30 人。我們需要「具使用者介面（UI/User Interface）、使用者體驗（UX/User Experience）或服務設計（Service Design）之相關科系專長，並嫻熟 Adobe XD、inVision、Sketch 或任何原型製作工具」和「熟悉HTML5 / CSS3 / JavaScript ES6，具備響應式網頁設計（RWD/Responsive Web Design）開發經驗，且對使用者介面或體驗設計（UI/UX）敏感度佳或具興趣」的同學，一同完成此次專案。"
+            "content": "RAY計畫是透過教育部「大專學生公部門見習計畫」招募青年學生，名額 30 人。我們需要<b>「具使用者介面（UI/User Interface）、使用者體驗（UX/User Experience）或服務設計（Service Design）之相關科系專長，並嫻熟 Adobe XD、inVision、Sketch 或任何原型製作工具」</b>和<b>「熟悉HTML5 / CSS3 / JavaScript ES6，具備響應式網頁設計（RWD/Responsive Web Design）開發經驗，且對使用者介面或體驗設計（UI/UX）敏感度佳或具興趣」</b>的同學，一同完成此次專案。"
         },
         {
             "title": "為什麼這麼做？",
             "icon": "fa-search",
             "content": "行政院國家發展委員會正著手進行政府網站數位服務改善，本次計畫將和國發會及相關部會協作，一同優化政府網站數位服務。"
-            
         },
         {
             "title": "我們怎麼做？",
